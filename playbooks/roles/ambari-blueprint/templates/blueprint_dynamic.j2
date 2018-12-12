@@ -910,6 +910,8 @@
     },
     {
       "spark2-defaults": {
+        "spark.driver.extraLibraryPath" : "{{ extraLibraryPath | default('/usr/hdp/current/hadoop-client/lib/native:/usr/hdp/current/hadoop-client/lib/native/Linux-amd64-64') }}"
+        "spark.executor.extraLibraryPath" : "{{ extraLibraryPath | default('/usr/hdp/current/hadoop-client/lib/native:/usr/hdp/current/hadoop-client/lib/native/Linux-amd64-64') }}"
         "spark.history.retainedApplications" : "{{ retainedApplications | default('50')}}",
         "spark.history.fs.cleaner.maxAge" : "{{ cleanerMaxAge | default('7')}}",
         "spark.driver.port" : "{{ spark_driver_port | default('55000')}}",
